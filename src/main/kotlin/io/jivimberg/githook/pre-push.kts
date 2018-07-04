@@ -28,8 +28,8 @@ val exitValue = when {
         Constants.ERROR_EXIT_VALUE
     }
     else -> {
-        println("${Constants.SCRIPT_LOG_TAG} Something exploded! I'm sorry but you can't continue with your push")
-        Constants.ERROR_EXIT_VALUE
+        println("${Constants.SCRIPT_LOG_TAG} Everything went fine. You can continue with your push")
+        Constants.SUCCESS_EXIT_VALUE
     }
 }
 
