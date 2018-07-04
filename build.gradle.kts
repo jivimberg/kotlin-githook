@@ -20,6 +20,10 @@ apply {
     plugin("kotlin")
 }
 
+plugins {
+    java
+}
+
 val kotlin_version: String by extra
 
 repositories {
