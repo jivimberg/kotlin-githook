@@ -8,8 +8,8 @@ To be able to run Kotlin as a script you'll need to install [KScript](https://gi
 
 ## Running it
 
-Doing a `gradle build` will install the githook pre-push script. You can check [this line](build.gradle.kts#L43) to see how this is achieved.
+Doing a `gradle build` will install the githook pre-push script. You can check [this line](blob/3b1f992dc106126d57f8f7899de615150d1b5b54/build.gradle.kts#L43) to see how this is achieved.
 
-Next time you do `git push` [the script](pre-push.kts) will be executed. As part of the script `gradle check` will be executed. If the run is successful you'll be able to push, otherwise the push will be aborted.
+Next time you do `git push` [the script](src/main/kotlin/io/jivimberg/githook/pre-push.kts) will be executed. As part of the script `gradle check` will be executed. If the run is successful you'll be able to push, otherwise the push will be aborted.
 
 For a more in-depth explanation of the code check the article: https://jivimberg.io/blog/2018/07/03/writing-githooks-in-kotlin/
