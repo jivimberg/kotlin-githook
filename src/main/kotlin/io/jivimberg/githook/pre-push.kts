@@ -2,14 +2,7 @@
 
 import java.io.File
 
-object Constants {
-    const val SCRIPT_LOG_TAG = "Pre-push -"
-    const val NOTHING_TO_STASH_MSG = "No local changes to save"
-    const val SUCCESS_EXIT_VALUE = 0
-    const val ERROR_EXIT_VALUE = -1
-}
-
-println("${Constants.SCRIPT_LOG_TAG} Running oic-form-service pre-push hook")
+println("${Constants.SCRIPT_LOG_TAG} Running pre-push hook")
 val hasStashed = stash()
 if (hasStashed) {
     println("${Constants.SCRIPT_LOG_TAG} Stashing uncommited changes")
@@ -62,5 +55,12 @@ fun String.runCommandWithRedirect(dir: File? = null): ExitStatus =
         .directory(dir)
         .start()
         .waitFor()
+
+object Constants {
+    const val SCRIPT_LOG_TAG = "Pre-push -"
+    const val NOTHING_TO_STASH_MSG = "No local changes to save"
+    const val SUCCESS_EXIT_VALUE = 0
+    const val ERROR_EXIT_VALUE = -1
+}
 
 typealias ExitStatus = Int
